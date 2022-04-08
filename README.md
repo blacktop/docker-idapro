@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/blacktop/docker-idapro"><img alt="IDA Logo" src="https://raw.githubusercontent.com/blacktop/docker-idapro/master/logo.png" height="140" /></a>
+  <a href="https://github.com/blacktop/docker-idapro"><img alt="IDA Logo" src="https://raw.githubusercontent.com/blacktop/docker-idapro/master/logo.png" height="100" /></a>
   <a href="https://github.com/blacktop/docker-idapro"><h3 align="center">docker-idapro</h3></a>
   <p align="center">IDA Pro Free Docker Image</p>
   <p align="center">

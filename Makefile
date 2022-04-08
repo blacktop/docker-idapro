@@ -26,6 +26,7 @@ test: ## Test docker image
 .PHONY: ssh
 ssh: ## SSH into docker image
 	@docker run --init -it --rm --entrypoint=bash $(ORG)/$(NAME):$(BUILD)
+	# @docker run --init -it --rm --entrypoint=bash -e DISPLAY=$(ipconfig getifaddr en0):0 -v $(PWD)/.X11-unix:/tmp/.X11-unix $(ORG)/$(NAME):$(BUILD)
 
 # Absolutely awesome: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:
