@@ -21,12 +21,33 @@ endif
 
 .PHONY: test
 test: ## Test docker image
-	echo "not implimented yet"
+	@echo "not implimented yet"
+
+.PHONY: run
+run: stop-client ## Run IDA Pro client
+	@docker run --init -it --name $(NAME) \
+             --cpus="2" \
+             --memory="4g" \
+             -e MAXMEM=4G \
+             -e DISPLAY=host.docker.internal:0 \
+			 -v `pwd`:/data \
+             $(ORG)/$(NAME):$(BUILD)
+
+.PHONY: socat
+socat: ## Start socat
+	open -a XQuartz
+	socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$$DISPLAY\"
 
 .PHONY: ssh
 ssh: ## SSH into docker image
-	@docker run --init -it --rm --entrypoint=bash $(ORG)/$(NAME):$(BUILD)
-	# @docker run --init -it --rm --entrypoint=bash -e DISPLAY=$(ipconfig getifaddr en0):0 -v $(PWD)/.X11-unix:/tmp/.X11-unix $(ORG)/$(NAME):$(BUILD)
+	@docker run --init -it --rm --entrypoint=bash -e DISPLAY=$(ipconfig getifaddr en0):0 -v $(PWD)/.X11-unix:/tmp/.X11-unix $(ORG)/$(NAME):$(BUILD)
+
+.PHONY: stop-client
+stop-client: ## Kill running client container
+	@docker rm -f $(NAME) || true
+
+clean: stop-all ## Clean docker image and stop all running containers
+	docker rmi $(ORG)/$(NAME):$(BUILD) || true
 
 # Absolutely awesome: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:
