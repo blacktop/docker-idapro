@@ -1,14 +1,14 @@
 <p align="center">
   <a href="https://github.com/blacktop/docker-idapro"><img alt="IDA Logo" src="https://raw.githubusercontent.com/blacktop/docker-idapro/master/logo.png" height="100" /></a>
   <a href="https://github.com/blacktop/docker-idapro"><h3 align="center">docker-idapro</h3></a>
-  <p align="center">IDA Pro Free Docker Image</p>
+  <p align="center">[WIP] IDA Pro Free Docker Image 🚧</p>
   <p align="center">
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Stars">
           <img src="https://img.shields.io/docker/stars/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Image">
-          <img src="https://img.shields.io/badge/docker%20image-1.41GB-blue.svg" /></a>
+          <img src="https://img.shields.io/badge/docker%20image-804MB-blue.svg" /></a>
     <a href="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml" alt="Docker CI">
           <img src="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml/badge.svg" /></a>
 </p>
@@ -24,9 +24,9 @@ For use in a [ipsw](https://github.com/blacktop/ipsw) pipeline.
 ## Image Tags
 
 ```bash
-REPOSITORY               TAG                 SIZE
-blacktop/idapro         latest              1.41GB
-blacktop/idapro         7.7                 1.41GB
+REPOSITORY              TAG                 SIZE
+blacktop/idapro         latest              804MB
+blacktop/idapro         7.7                 804MB
 ```
 
 ## Getting Started
