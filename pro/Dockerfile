@@ -38,6 +38,7 @@ RUN \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives /tmp/* /var/tmp/*
 
 # ENV QT_DEBUG_PLUGINS=1
+ENV XDG_RUNTIME_DIR /tmp/runtime-root
 
 WORKDIR /ida
 

@@ -107,9 +107,10 @@ Batch mode *(creates idb and asm files)*
 ```bash
 docker run --init -it --rm \
            --name idapro \
-           -v `pwd`:/data \
+           -v `pwd`/files:/files \
+           -v `pwd`/logs:/logs \ # you can pipe the logs out
            --entrypoint=idat64 \ # idat64 uses less resources than ida64
-           blacktop/idapro -B -P+ /data/bin
+           blacktop/idapro -B -a- -P+ -L/logs/ida.log /files/kernelcache.release.iPhone11,8
 ```
 
 Autonomous mode
@@ -117,11 +118,11 @@ Autonomous mode
 ```bash
 docker run --init -it --rm \
            --name idapro \
-           -v `pwd`:/data \
+           -v `pwd`/samples:/samples \
            -v `pwd`/py:/ida/python \
            -v `pwd`/scripts:/ida/idc \ # add local scripts to IDA
            --entrypoint=idat64 \
-           blacktop/idapro -A -Sanalysis.idc /data/bin
+           blacktop/idapro -A -Sanalysis.idc /samples/bin
 ```
 
 > **NOTE:** Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
