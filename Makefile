@@ -10,16 +10,16 @@ IDAPW ?=$(shell cat ida.pw)
 all: build size test
 
 .PHONY: build
-build: ## Build docker image
-	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) pro/$(BUILD)
+build: ## Build IDA Free docker image
+	docker build -t $(ORG)/$(NAME):$(BUILD) $(BUILD)
+
+.PHONY: build-pro
+build-pro: ## Build IDA Pro docker image
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) pro
 
 .PHONY: build-reg
-build-reg: ## Build registered docker image
-	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) -f pro/$(BUILD)/Dockerfile.reg pro/$(BUILD)
-
-.PHONY: build-free
-build-free: ## Build IDA Free docker image
-	docker build -t $(ORG)/$(NAME):$(BUILD) free/$(BUILD)
+build-reg: ## Build registered IDA Pro docker image
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) -f pro/Dockerfile.reg pro
 
 .PHONY: size
 size: build ## Get built image size

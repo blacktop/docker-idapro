@@ -48,7 +48,7 @@ docker run --init -it --rm \
 
 ## Build IDA Pro
 
-1) Put a copy of the linux installer in the `pro/7.7` folder and name it `idapro.run`
+1) Put a copy of the linux installer in the `pro` folder and name it `idapro.run`
 
 ```bash
 IDAPW="your-install-pw-here" make build
@@ -73,10 +73,10 @@ root@add3b0fd6966:/ida# cp ~/.idapro/ida.reg /data
 root@add3b0fd6966:/ida# exit
 ```
 
-5) Move the `ida.reg` file to the `pro/7.7` folder:
+5) Move the `ida.reg` file to the `pro` folder:
 
 ```bash
-mv data/ida.reg pro/7.7/
+mv data/ida.reg pro/
 ```
 
 6) Rebuild the IDA Pro image with the new `ida.reg` file:
