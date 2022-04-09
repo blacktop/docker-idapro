@@ -19,7 +19,7 @@ For use in a [ipsw](https://github.com/blacktop/ipsw) pipeline.
 
 ## Dependencies
 
-- [ubuntu:trusty](https://hub.docker.com/_/ubuntu)
+- [ubuntu:focal](https://hub.docker.com/_/ubuntu)
 
 ## Image Tags
 
@@ -31,14 +31,83 @@ blacktop/idapro         7.7                 804MB
 
 ## Getting Started
 
-### Headless
+#### On macOS
+
+1. Install XQuartz `brew install --cask xquartz`
+2. `open -a XQuartz` and make sure you **"Allow connections from network clients"**
+3. Now add the IP using Xhost with: `xhost + 127.0.0.1` or `xhost + $(ipconfig getifaddr en0)`
+4. Start up IDA Pro
 
 ```bash
-$ docker run --init -it --rm \
-             --name idapro \
-             -v `pwd`:/data \
-             blacktop/idapro -A /data/bin
+docker run --init -it --rm \
+           --name idafree \
+           -v `pwd`:/data \
+           -e DISPLAY=host.docker.internal:0 \
+           blacktop/idapro /data/bin
 ```
+
+## Build IDA Pro
+
+1) Put a copy of the linux installer in the `pro/7.7` folder and name it `idapro.run`
+
+```bash
+IPAPW="your-install-pw-here" make build
+```
+
+2) Enter image container:
+
+```bash
+make ssh
+```
+
+```bash
+root@add3b0fd6966:/ida# ./ida64
+```
+
+3) This will open the GUI; Now accept the license agreement and close the window.
+
+4) Copy the `ida.reg` file to the `/data` directory and exit container:
+
+```bash
+root@add3b0fd6966:/ida# cp ~/.idapro/ida.reg /data
+root@add3b0fd6966:/ida# exit
+```
+
+5) Move the `ida.reg` file to the `pro/7.7` folder:
+
+```bash
+mv data/ida/reg pro/7.7/
+```
+
+6) Rebuild the IDA Pro image with the new `ida.reg` file:
+
+```bash
+make build-reg
+```
+
+Congratulations!  You now have a registered IDA Pro image that you can perform headless analysis with 🎉
+
+### Headless
+
+Batch mode *(creates idb and asm files)*
+
+```bash
+docker run --init -it --rm \
+           --name idapro \
+           -v `pwd`:/data \
+           blacktop/idapro -B -P+ /data/bin
+```
+
+Autonomous mode
+
+```bash
+docker run --init -it --rm \
+           --name idapro \
+           -v `pwd`:/data \
+           blacktop/idapro -A -Sanalysis.py /data/bin
+```
+
+> **NOTE:** Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
 
 ## Issues
 

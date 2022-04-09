@@ -5,11 +5,21 @@ NAME=idapro
 BUILD ?=$(shell cat LATEST)
 LATEST ?=$(shell cat LATEST)
 
+IDAPW ?=$(shell cat ida.pw)
+
 all: build size test
 
 .PHONY: build
 build: ## Build docker image
-	docker build -t $(ORG)/$(NAME):$(BUILD) $(BUILD)
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) pro/$(BUILD)
+
+.PHONY: build-reg
+build-reg: ## Build registered docker image
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) -f pro/$(BUILD)/Dockerfile.reg pro/$(BUILD)
+
+.PHONY: build-free
+build-free: ## Build IDA Free docker image
+	docker build -t $(ORG)/$(NAME):$(BUILD) free/$(BUILD)
 
 .PHONY: size
 size: build ## Get built image size
@@ -40,7 +50,7 @@ socat: ## Start socat
 
 .PHONY: ssh
 ssh: ## SSH into docker image
-	@docker run --init -it --rm --entrypoint=bash -e DISPLAY=$(ipconfig getifaddr en0):0 -v $(PWD)/.X11-unix:/tmp/.X11-unix $(ORG)/$(NAME):$(BUILD)
+	@docker run --init -it --rm -v $(PWD)/data:/data --entrypoint=bash -e DISPLAY=host.docker.internal:0 $(ORG)/$(NAME):$(BUILD)
 
 .PHONY: stop-client
 stop-client: ## Kill running client container

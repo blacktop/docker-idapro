@@ -8,3 +8,5 @@ Makefile
 *.md
 *.bu
 *.png
+*.run
+*.pw

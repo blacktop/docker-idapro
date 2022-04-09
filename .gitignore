@@ -1,2 +1,5 @@
 
 *.bu
+*.run
+*.pw
+ida.reg
