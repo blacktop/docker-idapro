@@ -48,6 +48,17 @@ docker run --init -it --rm \
 
 > **NOTE:** ⚠️ This is the IDA Free version and does not seem to be able to do heaadless analysis.
 
+To persist settings across sessions:
+
+```bash
+docker run --init -it --rm \
+           --name idafree \
+           -v `pwd`:/data \
+           -v $HOME/.idapro:/root/.idapro \
+           -e DISPLAY=host.docker.internal:0 \
+           blacktop/idapro /data/bin
+```
+
 ## Build IDA Pro
 
 1) Put a copy of the linux installer in the `pro` folder and name it `idapro.run`
@@ -97,6 +108,7 @@ Batch mode *(creates idb and asm files)*
 docker run --init -it --rm \
            --name idapro \
            -v `pwd`:/data \
+           --entrypoint=idat64 \ # idat64 uses less resources than ida64
            blacktop/idapro -B -P+ /data/bin
 ```
 
@@ -106,7 +118,10 @@ Autonomous mode
 docker run --init -it --rm \
            --name idapro \
            -v `pwd`:/data \
-           blacktop/idapro -A -Sanalysis.py /data/bin
+           -v `pwd`/py:/ida/python \
+           -v `pwd`/scripts:/ida/idc \ # add local scripts to IDA
+           --entrypoint=idat64 \
+           blacktop/idapro -A -Sanalysis.idc /data/bin
 ```
 
 > **NOTE:** Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
