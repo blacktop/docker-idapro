@@ -113,6 +113,22 @@ docker run --init -it --rm \
            blacktop/idapro -B -a- -P+ -L/logs/ida.log /files/kernelcache.release.iPhone11,8
 ```
 
+```bash
+tail -f logs/ida.log
+
+Possible file format: Apple XNU kernelcache for ARM64e (kernel + all kexts) (/ida/loaders/macho64.so)
+Possible file format: Apple XNU kernelcache for ARM64e (kernel only) (/ida/loaders/macho64.so)
+Possible file format: Apple XNU kernelcache for ARM64e (single kext) (/ida/loaders/macho64.so)
+Possible file format: Apple XNU kernelcache for ARM64e (normal mach-o file) (/ida/loaders/macho64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+134217728 16384 8192 allocating memory for b-tree...
+191143936 23333 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+<SNIP>
+```
+
 Autonomous mode
 
 ```bash
