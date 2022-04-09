@@ -15,7 +15,7 @@
 
 ## Why?
 
-For use in a [ipsw](https://github.com/blacktop/ipsw) pipeline.
+For use as an [ipsw](https://github.com/blacktop/ipsw) pipeline.
 
 ## Dependencies
 
