@@ -76,7 +76,7 @@ root@add3b0fd6966:/ida# exit
 5) Move the `ida.reg` file to the `pro/7.7` folder:
 
 ```bash
-mv data/ida/reg pro/7.7/
+mv data/ida.reg pro/7.7/
 ```
 
 6) Rebuild the IDA Pro image with the new `ida.reg` file:
