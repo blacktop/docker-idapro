@@ -46,6 +46,8 @@ docker run --init -it --rm \
            blacktop/idapro /data/bin
 ```
 
+> **NOTE:** ⚠️ This is the IDA Free version and does not seem to be able to do heaadless analysis.
+
 ## Build IDA Pro
 
 1) Put a copy of the linux installer in the `pro` folder and name it `idapro.run`
