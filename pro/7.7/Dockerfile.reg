@@ -44,4 +44,3 @@ WORKDIR /ida
 ADD ida.reg /root/.idapro/ida.reg
 
 ENTRYPOINT ["/ida/ida64"]
-CMD ["--help"]

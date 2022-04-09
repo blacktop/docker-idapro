@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://github.com/blacktop/docker-idapro"><img alt="IDA Logo" src="https://raw.githubusercontent.com/blacktop/docker-idapro/master/logo.png" height="100" /></a>
   <a href="https://github.com/blacktop/docker-idapro"><h3 align="center">docker-idapro</h3></a>
-  <p align="center">[WIP] IDA Pro Free Docker Image 🚧</p>
+  <p align="center">IDA Pro Docker Image</p>
   <p align="center">
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Stars">
           <img src="https://img.shields.io/docker/stars/blacktop/idapro.svg" /></a>
@@ -51,7 +51,7 @@ docker run --init -it --rm \
 1) Put a copy of the linux installer in the `pro/7.7` folder and name it `idapro.run`
 
 ```bash
-IPAPW="your-install-pw-here" make build
+IDAPW="your-install-pw-here" make build
 ```
 
 2) Enter image container:

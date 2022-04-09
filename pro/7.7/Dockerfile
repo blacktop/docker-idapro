@@ -42,4 +42,3 @@ RUN \
 WORKDIR /ida
 
 ENTRYPOINT ["/ida/ida64"]
-CMD ["--help"]
