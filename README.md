@@ -64,7 +64,7 @@ docker run --init -it --rm \
 1) Put a copy of the linux installer in the `pro` folder and name it `idapro.run`
 
 ```bash
-IDAPW="your-install-pw-here" make build
+IDAPW="your-install-pw-here" make build-pro
 ```
 
 2) Enter image container:
