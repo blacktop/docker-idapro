@@ -34,7 +34,7 @@ blacktop/idapro         7.7                 804MB
 #### On macOS
 
 1. Install XQuartz `brew install --cask xquartz`
-2. `open -a XQuartz` and make sure you **"Allow connections from network clients"**
+2. `open -a XQuartz` and make sure you **"Allow connections from network clients"** in the Security tab
 3. Now add the IP using Xhost with: `xhost + 127.0.0.1` or `xhost + $(ipconfig getifaddr en0)`
 4. Start up IDA Pro
 
@@ -70,29 +70,16 @@ IDAPW="your-install-pw-here" make build-pro
 2) Enter image container:
 
 ```bash
-make ssh
+make ssh-pro
 ```
 
 ```bash
 root@add3b0fd6966:/ida# ./ida64
 ```
 
-3) This will open the GUI; Now accept the license agreement and close the window.
+3) This will open the GUI; now accept the license agreement and set any settings you want to persist and close the window.
 
-4) Copy the `ida.reg` file to the `/data` directory and exit container:
-
-```bash
-root@add3b0fd6966:/ida# cp ~/.idapro/ida.reg /data
-root@add3b0fd6966:/ida# exit
-```
-
-5) Move the `ida.reg` file to the `pro` folder:
-
-```bash
-mv data/ida.reg pro/
-```
-
-6) Rebuild the IDA Pro image with the new `ida.reg` file:
+4) Rebuild the IDA Pro image with the new `ida.reg` file:
 
 ```bash
 make build-reg

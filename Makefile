@@ -52,6 +52,10 @@ socat: ## Start socat
 ssh: ## SSH into docker image
 	@docker run --init -it --rm -v $(PWD)/data:/data --entrypoint=bash -e DISPLAY=host.docker.internal:0 $(ORG)/$(NAME):$(BUILD)
 
+.PHONY: ssh-pro
+ssh-pro: ## SSH into docker image
+	@docker run --init -it --rm -v $(PWD)/data:/data -v $(PWD)/pro:/root/.idapro/ --entrypoint=bash -e DISPLAY=host.docker.internal:0 $(ORG)/$(NAME):$(BUILD)
+
 .PHONY: stop-client
 stop-client: ## Kill running client container
 	@docker rm -f $(NAME) || true
