@@ -130,6 +130,11 @@ docker run --init -it --rm \
 
 > **NOTE:** Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
 
+## TODO
+
+- [ ] Add support for [diaphora](https://github.com/joxeankoret/diaphora)
+- [ ] Add support for [binexport](https://github.com/google/binexport)
+
 ## Issues
 
 Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/blacktop/docker-idapro/issues/new)
