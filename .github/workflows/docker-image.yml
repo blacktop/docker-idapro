@@ -59,11 +59,23 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             blacktop/idapro:7
-            blacktop/idapro:7.7
-            blacktop/idapro
             ghcr.io/blacktop/idapro:7
             ghcr.io/blacktop/idapro:7.7
-            ghcr.io/blacktop/idapro
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push Docker image (v8)
+        id: docker_build_8
+        uses: docker/build-push-action@v2
+        with:
+          context: ./8.0
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            blacktop/idapro:8
+            blacktop/idapro:8.0
+            blacktop/idapro:latest
+            ghcr.io/blacktop/idapro:8
+            ghcr.io/blacktop/idapro:8.0
+            ghcr.io/blacktop/idapro:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       # - name: Build and push Docker image (alpine)

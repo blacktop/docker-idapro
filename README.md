@@ -24,6 +24,7 @@ For use as an [ipsw](https://github.com/blacktop/ipsw) pipeline.
 ```bash
 REPOSITORY              TAG                 SIZE
 blacktop/idapro         latest              804MB
+blacktop/idapro         8.0                 804MB
 blacktop/idapro         7.7                 804MB
 ```
 
