@@ -3,12 +3,12 @@
   <a href="https://github.com/blacktop/docker-idapro"><h3 align="center">docker-idapro</h3></a>
   <p align="center">IDA Pro Docker Image</p>
   <p align="center">
+    <a href="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml" alt="Docker CI">
+          <img src="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml/badge.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Image">
           <img src="https://img.shields.io/badge/docker%20image-804MB-blue.svg" /></a>
-    <a href="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml" alt="Docker CI">
-          <img src="https://github.com/blacktop/docker-idapro/actions/workflows/docker-image.yml/badge.svg" /></a>
 </p>
 
 ## Why?
