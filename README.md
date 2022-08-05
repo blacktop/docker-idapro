@@ -3,8 +3,6 @@
   <a href="https://github.com/blacktop/docker-idapro"><h3 align="center">docker-idapro</h3></a>
   <p align="center">IDA Pro Docker Image</p>
   <p align="center">
-    <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Stars">
-          <img src="https://img.shields.io/docker/stars/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Image">
