@@ -59,6 +59,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             blacktop/idapro:7
+            blacktop/idapro:7.7
             ghcr.io/blacktop/idapro:7
             ghcr.io/blacktop/idapro:7.7
           labels: ${{ steps.meta.outputs.labels }}
