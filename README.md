@@ -134,6 +134,7 @@ docker run --init -it --rm \
 - [ ] Add support for [diaphora](https://github.com/joxeankoret/diaphora)
 - [ ] Add support for [binexport](https://github.com/google/binexport)
 - [ ] Add support for [ida_kernelcache](https://github.com/star-sg/ida_kernelcache)
+- [ ] Add support for [ida_kcpp](https://github.com/cellebrite-labs/ida_kcpp)
 
 ## Issues
 
