@@ -8,7 +8,7 @@
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/blacktop/idapro.svg" /></a>
     <a href="https://hub.docker.com/r/blacktop/idapro/" alt="Docker Image">
-          <img src="https://img.shields.io/badge/docker%20image-804MB-blue.svg" /></a>
+          <img src="https://img.shields.io/badge/docker%20image-1.09GB-blue.svg" /></a>
 </p>
 
 ## Why?
@@ -23,7 +23,8 @@ For use as an [ipsw](https://github.com/blacktop/ipsw) pipeline.
 
 ```bash
 REPOSITORY              TAG                 SIZE
-blacktop/idapro         latest              804MB
+blacktop/idapro         latest              1.09GB
+blacktop/idapro         8.2                 1.09GB
 blacktop/idapro         8.0                 804MB
 blacktop/idapro         7.7                 804MB
 ```
@@ -142,4 +143,4 @@ Find a bug? Want more features? Find something missing in the documentation? Let
 
 ### License
 
-MIT License Copyright (c) 2022 blacktop
+MIT License Copyright (c) 2022-2023 blacktop

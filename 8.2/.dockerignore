@@ -1,0 +1,12 @@
+# Ignore .git folder
+.git*
+.gitignore
+
+LATEST
+LICENSE
+Makefile
+*.md
+*.bu
+*.png
+*.run
+*.pw

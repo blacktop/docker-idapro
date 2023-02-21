@@ -25,12 +25,12 @@ jobs:
     steps:
       -
         name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       -
         name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: |
             blacktop/idapro
@@ -38,14 +38,14 @@ jobs:
 
       -
         name: Docker Login
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       -
         name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push Docker image (v7)
         id: docker_build_7
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v4
         with:
           context: ./7.7
           push: ${{ github.event_name != 'pull_request' }}
@@ -66,22 +66,22 @@ jobs:
 
       - name: Build and push Docker image (v8)
         id: docker_build_8
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v4
         with:
-          context: ./8.0
+          context: ./8.2
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             blacktop/idapro:8
-            blacktop/idapro:8.0
+            blacktop/idapro:8.2
             blacktop/idapro:latest
             ghcr.io/blacktop/idapro:8
-            ghcr.io/blacktop/idapro:8.0
+            ghcr.io/blacktop/idapro:8.2
             ghcr.io/blacktop/idapro:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       # - name: Build and push Docker image (alpine)
       #   id: docker_build_alpine
-      #   uses: docker/build-push-action@v2
+      #   uses: docker/build-push-action@v4
       #   with:
       #     context: ./alpine
       #     push: ${{ github.event_name != 'pull_request' }}
