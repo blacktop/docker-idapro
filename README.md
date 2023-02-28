@@ -136,6 +136,7 @@ docker run --init -it --rm \
 - [ ] Add support for [binexport](https://github.com/google/binexport)
 - [ ] Add support for [ida_kernelcache](https://github.com/star-sg/ida_kernelcache)
 - [ ] Add support for [ida_kcpp](https://github.com/cellebrite-labs/ida_kcpp)
+- [ ] Add support for [PPLorer](https://github.com/cellebrite-labs/PPLorer)
 
 ## Issues
 

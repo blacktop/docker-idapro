@@ -15,11 +15,11 @@ build: ## Build IDA Free docker image
 
 .PHONY: build-pro
 build-pro: ## Build IDA Pro docker image
-	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) pro
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD)-pro pro
 
 .PHONY: build-reg
 build-reg: ## Build registered IDA Pro docker image
-	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD) -f pro/Dockerfile.reg pro
+	docker build --build-arg IDAPW=${IDAPW} -t $(ORG)/$(NAME):$(BUILD)-pro -f pro/Dockerfile.reg pro
 
 .PHONY: size
 size: build ## Get built image size
