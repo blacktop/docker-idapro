@@ -25,6 +25,7 @@ RUN \
                             libxrender1 \
                             libxtst6 \
                             libxi6 \
+                            libsecret-1-0 \
     && apt-get install -y python3-pip ca-certificates wget git --no-install-recommends \
     && wget --progress=bar:force -O /tmp/idafree.run ${IDA_URL} \
     && chmod +x /tmp/idafree.run \

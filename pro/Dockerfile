@@ -28,6 +28,7 @@ RUN \
                             libxrender1 \
                             libxtst6 \
                             libxi6 \
+                            libsecret-1-0 \
     && apt-get install -y python3-pip ca-certificates wget git --no-install-recommends \
     && echo "===> Installing Licensed IDA Pro..." \
     && /tmp/ida.run --mode unattended --prefix /ida --installpassword "${IDAPW}" \
