@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 ubuntu:focal
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV IDA_URL https://out7.hex-rays.com/files/idafree82_linux.run
+ENV IDA_URL https://out7.hex-rays.com/files/idafree84_linux.run
 
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime \
     && echo $CONTAINER_TIMEZONE > /etc/timezone
