@@ -68,14 +68,14 @@ jobs:
         id: docker_build_8
         uses: docker/build-push-action@v5
         with:
-          context: ./8.2
+          context: ./8.4
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             blacktop/idapro:8
-            blacktop/idapro:8.2
+            blacktop/idapro:8.4
             blacktop/idapro:latest
             ghcr.io/blacktop/idapro:8
-            ghcr.io/blacktop/idapro:8.2
+            ghcr.io/blacktop/idapro:8.4
             ghcr.io/blacktop/idapro:latest
           labels: ${{ steps.meta.outputs.labels }}
 
