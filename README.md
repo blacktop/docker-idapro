@@ -47,7 +47,8 @@ docker run --init -it --rm \
            blacktop/idapro /data/bin
 ```
 
-> **NOTE:** ⚠️ This is the IDA Free version and does not seem to be able to do headless analysis.
+> [!WARNING]  
+> This is the IDA **Free** version and does not seem to be able to do headless analysis.
 
 To persist settings across sessions:
 
