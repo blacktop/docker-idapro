@@ -130,7 +130,8 @@ docker run --init -it --rm \
            blacktop/idapro -A -Sanalysis.idc /samples/bin
 ```
 
-> **NOTE:** Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
+> [!NOTE] 
+> Here are a list of other CLI [options](https://www.hex-rays.com/products/ida/support/idadoc/417.shtml)
 
 ## TODO
 
